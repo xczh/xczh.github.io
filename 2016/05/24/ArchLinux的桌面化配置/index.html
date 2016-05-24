@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>ArcLinux的桌面化配置 | 时间旅行者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
+虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcLinux的桌面化配置">
+<meta property="og:url" content="https://xczh.github.io/2016/05/24/ArchLinux的桌面化配置/index.html">
+<meta property="og:site_name" content="时间旅行者">
+<meta property="og:description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
+虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
+<meta property="og:image" content="https://xczh.github.io/img/computer/archlinux.jpg">
+<meta property="og:updated_time" content="2016-05-24T14:45:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArcLinux的桌面化配置">
+<meta name="twitter:description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
+虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
+<meta name="twitter:image" content="https://xczh.github.io/img/computer/archlinux.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="时间旅行者" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar_200.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Chris Winnie</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">品味简简单单的小幸福</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/心情随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://git.io/6" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2313066394" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="https://xczh.github.io/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto: christopher.winnie2012@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ArchLinux/" style="font-size: 10px;">ArchLinux</a> <a href="/tags/C-Cpp/" style="font-size: 20px;">C&Cpp</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/微积分/" style="font-size: 10px;">微积分</a> <a href="/tags/数学分析/" style="font-size: 10px;">数学分析</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/tags/运维/" style="font-size: 10px;">运维</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://xjtuonline.tiaozhan.com/">交大青年之声</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xjtu.edu.cn/">XJTU</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mirrors.xjtu.edu.cn/">交大开源镜像站</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个简简单单的人，普通、平凡却有不凡的梦想。感激生活，感谢有你们。欢迎电子邮件跟我交流，我可是很喜欢交朋友的哦~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Chris Winnie</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar_200.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Chris Winnie</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">品味简简单单的小幸福</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/心情随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://git.io/6" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2313066394" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="https://xczh.github.io/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto: christopher.winnie2012@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-ArchLinux的桌面化配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/24/ArchLinux的桌面化配置/" class="article-date">
+  	<time datetime="2016-05-24T14:45:00.000Z" itemprop="datePublished">2016-05-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ArcLinux的桌面化配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/计算机科学/">计算机科学</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/img/computer/archlinux.jpg" alt="ArchLinux" title="ArchLinux"></p>
+<p>ArchLinux是一款简单，轻量的Linux发行版。由于其<strong>轻量</strong>、<strong>滚动升级</strong>的特性，特别适合个人作为日常办公、开发使用。</p>
+<p>虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句<code>pacman -Syu</code>就可以将当前系统“滚”到最新版，平滑升级。当然，这个特性使得ArchLinux必须经常升级（按我的经验，超过一个月不更新的话就不要更新了T_T感觉备份资料准备重装吧…），否则会导致版本差异太大，一次性升级太多的软件包造成依赖关系出问题，俗称“滚挂”。</p>
+<p>但是不管怎么说，这丝毫不能算是ArchLinux的缺点。今天重新配置了一遍ArchLinux的桌面（KDE）环境，做下记录备忘。</p>
+<a id="more"></a>
+<h2 id="基本系统安装"><a href="#基本系统安装" class="headerlink" title="基本系统安装"></a>基本系统安装</h2><p>ArchLinux拥有最强大的Wiki，这是所有Linux发行版里面绝无仅有的，基本上所有的问题都可以在Wiki里面找到答案，安装当然也不例外。</p>
+<p>ArchLinux和Ubuntu之类的发行版不一样，安装是需要手动通过命令行完成的，并没有图形化的安装向导。这体现了ArchLinux的高度可定制特性，你可以按需要安装你需要的东西，一个都不多。而且看着自己亲手一条条命令敲出来的系统，会不会很有成就感呢~</p>
+<p>首先贴Wiki的安装指导，新版的安装步骤可能有变化，以这里为准：<br><a href="https://wiki.archlinux.org/index.php/Beginners%27_guide" target="_blank" rel="external">ArchLinux Beginners’ guide</a></p>
+<p>挂载安装镜像光盘启动完毕之后，首先检查网络连接：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 4 www.baidu.com</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，ArchLinux的安装必须有良好的网络环境，安装过程需要下载大量的软件包。<br>通常，如果你在DHCP环境中，是可以自动联网的，<code>dhcpcd</code>客户端会自动启动获取IP设置。<br>如果你需要手动设置IP：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先停止dhcpcd服务(把enp0s25换成你的网络接口名，可以用ip link查询)</span></span><br><span class="line">systemctl stop dhcpcd@enp0s25.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定静态IP</span></span><br><span class="line">ip addr add 192.168.1.2/24 dev enp0s25</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加默认网关</span></span><br><span class="line">ip route add default via 192.168.1.1</span><br></pre></td></tr></table></figure></p>
+<p>如果你使用Wi-Fi来连接网络也是支持的，参考上面的Wiki说明。</p>
+<p>更新系统时间：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl <span class="built_in">set</span>-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来开始准备安装介质。ArchLinux可以安装在硬盘和U盘上，安装在U盘上参考Wiki。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有块设备</span></span><br><span class="line">lsblk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用fdisk进行分区</span></span><br><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
+<p>分区的问题不多说，<code>fdisk</code>很简单的，按<code>m</code>可以查看帮助。至少应该分一个根分区和Swap交换分区。如果是个人开发机的话推荐这种分区方案。</p>
+<p>分区完毕之后，格式化相应的分区：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式化根分区</span></span><br><span class="line">mkfs.ext4 /dev/sdb1</span><br><span class="line"><span class="comment"># 格式化swap分区</span></span><br><span class="line">mkswap /dev/sdb2</span><br><span class="line"><span class="comment"># 启用swap分区</span></span><br><span class="line">swapon /dev/sdb2</span><br><span class="line"><span class="comment"># 挂载根分区</span></span><br><span class="line">mount /dev/sdb1 /mnt</span><br></pre></td></tr></table></figure></p>
+<p>如果你有其他的数据分区，也需要挂载。挂载完成之后就可以安装ArchLinux了。</p>
+<p>首先选择安装镜像源，通常选择离你最近，速度最快的源：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></p>
+<p>在<code>mirrorlist</code>文件的最上面加一条：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/pacman.d/mirrorlist</span></span><br><span class="line"><span class="attr">Server</span> = http://mirrors.xjtu.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure></p>
+<p><code>pacman</code>会从上到下选择<code>Server</code>来下载镜像，你可以多指定几个<code>Server</code>，但是记得要加在开头。</p>
+<p>接下来开始安装了：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 强制刷新源</span></span><br><span class="line">pacman -Syy</span><br><span class="line"><span class="comment"># 安装基本操作系统</span></span><br><span class="line">pacstrap -i /mnt base base-devel</span><br><span class="line"><span class="comment"># 生成开机自动挂载</span></span><br><span class="line">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p>官网建议检查一下fstab文件是否生成正确，如果不正确，需要手动编辑修改。否则，重启之后会因为没自动挂载分区而失败。</p>
+<p>接下来<code>chroot</code>进去做一些配置：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chroot</span></span><br><span class="line">arch-chroot /mnt /bin/bash</span><br><span class="line"><span class="comment"># 设置Locale</span></span><br><span class="line">nano /etc/locale.gen</span><br></pre></td></tr></table></figure></p>
+<p>需要什么Locale，就把前面的<code>#</code>去掉。我个人习惯用英文的，所以我只使用<code>en_US.UTF-8</code>.不建议你这个时候启用中文编码，可能会造成命令行乱码。如果你需要中文支持，建议在安装完成之后，图形化下进行。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 应用Locale设置</span></span><br><span class="line">locale-gen</span><br><span class="line"><span class="built_in">echo</span> LANG=en_US.UTF-8 &gt; /etc/locale.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 时区设置</span></span><br><span class="line">tzselect</span><br><span class="line">ln <span class="_">-s</span> /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"><span class="comment"># 设置硬件时钟</span></span><br><span class="line">hwclock --systohc --utc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建初始ramdisk</span></span><br><span class="line">mkinitcpio -p linux</span><br><span class="line"><span class="comment"># 设置Root密码</span></span><br><span class="line">passwd</span><br></pre></td></tr></table></figure>
+<p>安装boot-loader:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你是UEFI/GPT分区</span></span><br><span class="line">bootctl install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果你是BIOS/MBR分区</span></span><br><span class="line">pacman -S grub os-prober</span><br><span class="line">grub-install /dev/sdb</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p>最后，设置主机名、网络：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> myhostname &gt; /etc/hostname</span><br><span class="line"><span class="comment"># 以DHCP为例</span></span><br><span class="line">systemctl <span class="built_in">enable</span> dhcpcd@interface.service</span><br><span class="line"><span class="comment"># 离开chroot环境</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 重启计算机</span></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
+<p>静态IP配置和Wi-Fi请参考Wiki.</p>
+<p>这样，就安装好了一个可用的ArchLinux系统。</p>
+<h2 id="图形化配置"><a href="#图形化配置" class="headerlink" title="图形化配置"></a>图形化配置</h2><p>重启完毕以后，如果不需要图形化的，就可以到此为止了。</p>
+<p>图形化的安装，下面我以<code>KDE</code>为例（没错我就是KDE党=。=）说明一下过程。</p>
+<h3 id="安装Xorg"><a href="#安装Xorg" class="headerlink" title="安装Xorg"></a>安装Xorg</h3><p>X11协议的开源实现，任何Linux上的图形化都需要它。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S xorg xterm xorg-xinit</span><br></pre></td></tr></table></figure>
+<p>选择全部安装。</p>
+<h3 id="安装登录管理器SDDM"><a href="#安装登录管理器SDDM" class="headerlink" title="安装登录管理器SDDM"></a>安装登录管理器SDDM</h3><p>又叫显示管理器，用来实现登录界面的图形化。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S sddm</span><br><span class="line"><span class="comment"># 设置开机自启动sddm</span></span><br><span class="line">systemctl <span class="built_in">enable</span> sddm.service</span><br></pre></td></tr></table></figure>
+<h3 id="安装KDE5-Plasma桌面"><a href="#安装KDE5-Plasma桌面" class="headerlink" title="安装KDE5 Plasma桌面"></a>安装KDE5 Plasma桌面</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pacman -S plasma kde-applications</span><br><span class="line"><span class="comment"># 设置X启动的时候启动plasma</span></span><br><span class="line">nano /etc/X11/xinit/xinitrc</span><br><span class="line"><span class="comment"># 在最后添加一句 exec startkde</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下图形化在<code>tty1</code>开启，如果你需要调整到<code>tty7</code>：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/sddm.conf</span><br><span class="line"><span class="comment"># 加入以下内容</span></span><br><span class="line">[XDisplay]</span><br><span class="line">MinimumVT=7</span><br></pre></td></tr></table></figure></p>
+<p>重启系统，现在图形化应该已经好了。</p>
+<h2 id="图形化增强设置"><a href="#图形化增强设置" class="headerlink" title="图形化增强设置"></a>图形化增强设置</h2><p>首先增加<code>archlinuxcn</code>的源，编辑<code>/etc/pacman.conf</code>文件，增加：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="comment">#The Chinese Arch Linux communities packages.</span></span><br><span class="line"><span class="attr">SigLevel</span> = Optional TrustedOnly</span><br><span class="line"><span class="attr">Server</span>   = https://mirrors.xjtu.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure></p>
+<p>刷新源缓存，并且安装密钥链：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+<p>然后安装<code>zsh</code>这个增强版shell，并且用<code>oh-my-zsh</code>来自动配置它：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S zsh</span><br><span class="line"><span class="comment"># 安装oh-my-zsh</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>接着配置<code>zsh</code>的插件：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S autojump sudo zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p>
+<p>编辑<code>~/.zshrc</code>文件，修改：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主题设置为你喜欢的</span></span><br><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用的插件</span></span><br><span class="line"><span class="attr">plugins</span>=(git autojump sudo colored-man-pages)</span><br></pre></td></tr></table></figure></p>
+<p>并在文件末尾添加你需要的<code>alias</code>和语法高亮设置：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias ll=<span class="string">"ls -l"</span></span><br><span class="line">alias <span class="keyword">grep</span>=<span class="string">"grep --color=auto"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">source</span> <span class="regexp">/usr/</span>share<span class="regexp">/zsh/</span>plugins<span class="regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure>
+<p>安装中文输入法和Chromium：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pacman -S fcitx fcitx-configtool fcitx-sunpinyin</span><br><span class="line"><span class="comment"># 如果用 KDM GDM LightDM lxdm等显示管理器，请在 ~/.xprofile 中加入</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果用 startx 或者 Slim 启动，则在 ~/.xinitrc 中加入以下代码</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输入法（在图形化界面下运行）</span></span><br><span class="line">fcitx-configtool</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装Chromium</span></span><br><span class="line">pacman -S Chromium</span><br></pre></td></tr></table></figure></p>
+<p>重启之后，应该就一切正常了。</p>
+<p>还有什么问题？欢迎补充~</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/24/关于二重极限一个普遍的错误认为/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于二重极限一个普遍的错误认为</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style_24x24">
+        <!-- <span class="jiathis_txt">分享到：</span> -->
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_cqq"></a>
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tqq"></a>
+        <!--
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        -->
+        <a class="jiathis_counter_style"></a>
+    </div><!--
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		 <a class="jiathis_button_tumblr"></a> 
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	        
+	</div>-->
+	<!--
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	-->
+	<script type="text/javascript" src="/js/jiathis/jia.js" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ArchLinux的桌面化配置" data-title="ArcLinux的桌面化配置" data-url="https://xczh.github.io/2016/05/24/ArchLinux的桌面化配置/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"xczh"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Chris Winnie | 未经许可，谢绝转载<br />
+    		由 <a href="http://hexo.io/" target="_blank">Hexo</a> 引擎强力驱动 - 最后更新: 2016-05-25
+    	</div>
+      	<div class="footer-right">
+      		<div id="footer-corp-img">
+		    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                <!--
+    		    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+                -->
+                <img alt="Creative Commons License" style="border-width:0" src="/img/l_by-nc-nd_4_88x31.png" />
+		    </a>
+		</div>
+		<div id="footer-corp-text">
+		    如无特别说明，所有作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="a_blank">知识共享Attribution-<br />NonCommercial-NoDerivatives 4.0 国际许可协议</a>进行许可
+		</div>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+
+
+
+<script src="/js/require-2.1.6.min.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
