@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>ArcLinux的桌面化配置 | 时间旅行者</title>
+  <title>ArchLinux的桌面化配置 | 时间旅行者</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
 虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcLinux的桌面化配置">
+<meta property="og:title" content="ArchLinux的桌面化配置">
 <meta property="og:url" content="https://xczh.github.io/2016/05/24/ArchLinux的桌面化配置/index.html">
 <meta property="og:site_name" content="时间旅行者">
 <meta property="og:description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
 虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
 <meta property="og:image" content="https://xczh.github.io/img/computer/archlinux.jpg">
-<meta property="og:updated_time" content="2016-05-24T14:45:00.000Z">
+<meta property="og:updated_time" content="2016-06-09T12:13:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcLinux的桌面化配置">
+<meta name="twitter:title" content="ArchLinux的桌面化配置">
 <meta name="twitter:description" content="ArchLinux是一款简单，轻量的Linux发行版。由于其轻量、滚动升级的特性，特别适合个人作为日常办公、开发使用。
 虽然稳定性不及Debian/CentOS/RHEL等服务器发行版，但是软件更新快、可自由定制程度高的特性，使得ArchLinux从众多Linux发行版中脱颖而出，受到了广大Linux爱好者的欢迎。其滚动升级的特性，使得基本不用重装系统，一句pacman -Syu就可以将当前系统">
 <meta name="twitter:image" content="https://xczh.github.io/img/computer/archlinux.jpg">
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ArcLinux的桌面化配置
+      ArchLinux的桌面化配置
     </h1>
   
 
@@ -287,12 +287,13 @@
 <h2 id="图形化增强设置"><a href="#图形化增强设置" class="headerlink" title="图形化增强设置"></a>图形化增强设置</h2><p>首先增加<code>archlinuxcn</code>的源，编辑<code>/etc/pacman.conf</code>文件，增加：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="comment">#The Chinese Arch Linux communities packages.</span></span><br><span class="line"><span class="attr">SigLevel</span> = Optional TrustedOnly</span><br><span class="line"><span class="attr">Server</span>   = https://mirrors.xjtu.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure></p>
 <p>刷新源缓存，并且安装密钥链：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+<p>安装字体：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 英文字体</span></span><br><span class="line">pacman -S adobe-source-code-pro-fonts adobe-sans-pro-fonts ttf-dejavu ttf-droid ttf-oxygen</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文字体</span></span><br><span class="line">pacman -S adobe-source-han-sans-cn-fonts</span><br></pre></td></tr></table></figure></p>
 <p>然后安装<code>zsh</code>这个增强版shell，并且用<code>oh-my-zsh</code>来自动配置它：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S zsh</span><br><span class="line"><span class="comment"># 安装oh-my-zsh</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>接着配置<code>zsh</code>的插件：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S autojump sudo zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p>
 <p>编辑<code>~/.zshrc</code>文件，修改：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主题设置为你喜欢的</span></span><br><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用的插件</span></span><br><span class="line"><span class="attr">plugins</span>=(git autojump sudo colored-man-pages)</span><br></pre></td></tr></table></figure></p>
 <p>并在文件末尾添加你需要的<code>alias</code>和语法高亮设置：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias ll=<span class="string">"ls -l"</span></span><br><span class="line">alias <span class="keyword">grep</span>=<span class="string">"grep --color=auto"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">source</span> <span class="regexp">/usr/</span>share<span class="regexp">/zsh/</span>plugins<span class="regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure>
-<p>安装中文输入法和Chromium：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pacman -S fcitx fcitx-configtool fcitx-sunpinyin</span><br><span class="line"><span class="comment"># 如果用 KDM GDM LightDM lxdm等显示管理器，请在 ~/.xprofile 中加入</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果用 startx 或者 Slim 启动，则在 ~/.xinitrc 中加入以下代码</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输入法（在图形化界面下运行）</span></span><br><span class="line">fcitx-configtool</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装Chromium</span></span><br><span class="line">pacman -S Chromium</span><br></pre></td></tr></table></figure></p>
+<p>安装中文输入法和Chromium：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pacman -S fcitx-im fcitx-configtool fcitx-sunpinyin</span><br><span class="line"><span class="comment"># 如果用 KDM GDM LightDM lxdm等显示管理器，请在 ~/.xprofile 中加入</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果用 startx 或者 Slim 启动，则在 ~/.xinitrc 中加入以下代码</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输入法（在图形化界面下运行）</span></span><br><span class="line">fcitx-configtool</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装Chromium</span></span><br><span class="line">pacman -S Chromium</span><br></pre></td></tr></table></figure></p>
 <p>重启之后，应该就一切正常了。</p>
 <p>还有什么问题？欢迎补充~</p>
 
@@ -351,7 +352,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ArchLinux的桌面化配置" data-title="ArcLinux的桌面化配置" data-url="https://xczh.github.io/2016/05/24/ArchLinux的桌面化配置/"></div>
+	<div class="ds-thread" data-thread-key="ArchLinux的桌面化配置" data-title="ArchLinux的桌面化配置" data-url="https://xczh.github.io/2016/05/24/ArchLinux的桌面化配置/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start -->
 	<script type="text/javascript">
@@ -377,7 +378,7 @@
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2016 Chris Winnie | 未经许可，谢绝转载<br />
-    		由 <a href="http://hexo.io/" target="_blank">Hexo</a> 引擎强力驱动 - 最后更新: 2016-05-25
+    		由 <a href="http://hexo.io/" target="_blank">Hexo</a> 引擎强力驱动 - 最后更新: 2016-06-09
     	</div>
       	<div class="footer-right">
       		<div id="footer-corp-img">
